@@ -1,0 +1,48 @@
+import random
+rock='''
+    -------
+---'   ----)
+      (-----)
+      (-----)
+      (----)
+---' -(---)
+'''
+
+paper='''
+   -------
+---' ----)----
+        ------)
+        --------)
+        -------)
+---, ---------)
+'''
+
+scissors='''
+
+    ---------
+---'     -----)---
+            -------)
+          -----------)
+          (----)
+---. ----(---)
+'''
+     
+gi=[rock,paper,scissors]
+uc=int(input("Enter your choice: Type 0 for Rock, 1 for Paper, 2 for Scissors."))
+if uc>=3 or uc<0:
+    print("You entered invalid number, You lose")
+else:
+    print(gi[uc])
+    computer_choice=random.randint(0,2)
+    print("Computer Choose:")
+    print(gi [computer_choice])
+    if computer_choice==uc:
+        print("It's a draw")
+    elif computer_choice==0 and uc==2:
+        print("You Lose")
+    elif uc==0 and computer_choice==2:
+        print("You Win")
+    elif computer_choice > uc:
+        print("You lose")
+    elif uc > computer_choice:
+        print("You win")
